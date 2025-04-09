@@ -14,16 +14,16 @@ const FormControl = () => {
   const {
     register,
     formState: { errors },
-    getValues,
+    // getValues,
     trigger,
   } = useForm<TFormData>({
     resolver: zodResolver(formValidation),
   });
 
-  const handleSubmit = () => {
-    const formData = getValues();
-    console.log(formData);
-  };
+  // const handleSubmit = () => {
+  //   const formData = getValues();
+  //   console.log(formData);
+  // };
 
   return (
     <div className="w-[60%] p-10">

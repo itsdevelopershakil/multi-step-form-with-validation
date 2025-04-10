@@ -63,3 +63,16 @@ npm install
 # Run the development server
 npm run dev
 ```
+
+🌒 Dark Mode
+Dark mode is fully supported using Tailwind's dark class strategy. Try it by toggling your system theme or manually applying dark mode.
+
+📌 Future Improvements
+Simulate API submission using React Query or RTK Query
+
+Add backend integration (e.g., with a database or mock server)
+
+Unit & integration tests
+
+🧑‍💻 Author
+Made with 💙 by Shakil Ahmed

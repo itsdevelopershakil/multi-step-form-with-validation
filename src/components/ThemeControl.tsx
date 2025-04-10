@@ -5,28 +5,22 @@ import { FaMoon } from "react-icons/fa";
 import { IoIosSunny } from "react-icons/io";
 
 const ThemeControl = () => {
-  const [darkMode, SetDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  });
 
   useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-      SetDarkMode(JSON.parse(theme));
-    } else {
-      SetDarkMode(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(darkMode));
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("theme", JSON.stringify(darkMode));
   }, [darkMode]);
 
   const handleChange = () => {
-    SetDarkMode((prev) => !prev);
+    setDarkMode((prev) => !prev);
   };
   return (
     <div className="absolute top-5 right-5">

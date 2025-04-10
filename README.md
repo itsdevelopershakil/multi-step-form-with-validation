@@ -54,7 +54,7 @@ A modern, responsive multi-step form built using the latest Next.js App Router. 
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/multi-step-form-nextjs.git
+git clone https://github.com/itsdevelopershakil/multi-step-form-with-validation.git
 cd multi-step-form-nextjs
 
 # Install dependencies

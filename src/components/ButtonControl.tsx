@@ -29,11 +29,12 @@ const ButtonControl = ({ step, handleStep, trigger }: ButtonControlT) => {
     }
   };
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between mt-10">
       <button
         type="button"
         onClick={() => handleChange("prev")}
         disabled={step === 0}
+        className="bg-primary px-10 py-2 text-white rounded text-sm font-semibold disabled:bg-primary/50 cursor-pointer"
       >
         Prev
       </button>
@@ -41,6 +42,7 @@ const ButtonControl = ({ step, handleStep, trigger }: ButtonControlT) => {
         type="button"
         onClick={() => handleChange("next")}
         disabled={step === 3}
+        className="bg-primary px-10 py-2 text-white rounded text-sm font-semibold disabled:bg-primary/50 cursor-pointer"
       >
         Next
       </button>

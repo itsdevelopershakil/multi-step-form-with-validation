@@ -44,23 +44,25 @@ const FormPreviewModal = ({ formData, close }: FormPreviewModalT) => {
   return (
     <div className="fixed top-0 left-0 h-screen max-h-screen w-full bg-black/50 flex items-center justify-center py-10 px-4 overflow-y-auto">
       <form
-        className="bg-white w-full max-w-[600px] p-10 rounded-lg"
+        className="bg-white dark:bg-[#282828] w-full max-w-[600px] p-10 rounded-lg"
         ref={formRef}
       >
-        <h1 className="text-center text-xl font-medium mb-5">
+        <h1 className="text-center text-xl font-medium mb-5 dark:text-white">
           Confirm Your Information
         </h1>
-        <label htmlFor="fullName">Full Name</label>
+        <label htmlFor="fullName" className="dark:text-white">
+          Full Name
+        </label>
         <div className="mt-2">
           <input
             type="text"
             readOnly
             value={fullName}
             id="fullName"
-            className="border border-gray-300 outline-none rounded block w-full p-2"
+            className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
           />
         </div>
-        <label htmlFor="userName" className="mt-2 block">
+        <label htmlFor="userName" className="mt-2 block dark:text-white">
           Username
         </label>
         <div className="mt-2">
@@ -69,10 +71,10 @@ const FormPreviewModal = ({ formData, close }: FormPreviewModalT) => {
             readOnly
             value={userName}
             id="userName"
-            className="border border-gray-300 outline-none rounded block w-full p-2"
+            className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
           />
         </div>
-        <label htmlFor="email" className="mt-2 block">
+        <label htmlFor="email" className="mt-2 block dark:text-white">
           Email Address
         </label>
         <div className="mt-2">
@@ -81,10 +83,10 @@ const FormPreviewModal = ({ formData, close }: FormPreviewModalT) => {
             readOnly
             value={email}
             id="email"
-            className="border border-gray-300 outline-none rounded block w-full p-2"
+            className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
           />
         </div>
-        <label htmlFor="phoneNumber" className="mt-2 block">
+        <label htmlFor="phoneNumber" className="mt-2 block dark:text-white">
           Phone Number
         </label>
         <div className="mt-2">
@@ -93,10 +95,10 @@ const FormPreviewModal = ({ formData, close }: FormPreviewModalT) => {
             readOnly
             value={phoneNumber}
             id="phoneNumber"
-            className="border border-gray-300 outline-none rounded block w-full p-2"
+            className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
           />
         </div>
-        <label htmlFor="phoneNumber" className="mt-2 block">
+        <label htmlFor="phoneNumber" className="mt-2 block dark:text-white">
           Street Address
         </label>
         <div className="mt-2">
@@ -105,10 +107,10 @@ const FormPreviewModal = ({ formData, close }: FormPreviewModalT) => {
             readOnly
             value={streetAddress}
             id="streetAddress"
-            className="border border-gray-300 outline-none rounded block w-full p-2"
+            className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
           />
         </div>
-        <label htmlFor="city" className="mt-2 block">
+        <label htmlFor="city" className="mt-2 block dark:text-white">
           City
         </label>
         <div className="mt-2">
@@ -117,10 +119,10 @@ const FormPreviewModal = ({ formData, close }: FormPreviewModalT) => {
             readOnly
             value={city}
             id="city"
-            className="border border-gray-300 outline-none rounded block w-full p-2"
+            className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
           />
         </div>
-        <label htmlFor="zipCode" className="mt-2 block">
+        <label htmlFor="zipCode" className="mt-2 block dark:text-white">
           Zip Code
         </label>
         <div className="mt-2">
@@ -129,13 +131,13 @@ const FormPreviewModal = ({ formData, close }: FormPreviewModalT) => {
             readOnly
             value={zipCode}
             id="zipCode"
-            className="border border-gray-300 outline-none rounded block w-full p-2"
+            className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
           />
         </div>
         <div className="flex justify-between mt-5">
           <button
             type="button"
-            className="px-8 py-2 rounded border border-gray-400 bg-transparent text-sm font-semibold cursor-pointer"
+            className="px-8 py-2 rounded border border-gray-400 bg-transparent text-sm font-semibold cursor-pointer dark:text-white"
             onClick={handleEdit}
           >
             Edit

@@ -22,28 +22,25 @@ const FormControl = () => {
     resolver: zodResolver(formValidation),
   });
 
-  // const handleSubmit = () => {
-  //   const formData = getValues();
-  //   console.log(formData);
-  // };
-
-  console.log(currentStep);
-
   return (
-    <div className="w-[60%] p-10">
+    <div className="w-full sm:w-[60%] p-10">
       <FormProgress step={currentStep} />
-      <h1 className="text-2xl font-medium my-8">Let&apos;s get started</h1>
+      <h1 className="text-2xl font-medium my-8 dark:text-white">
+        Let&apos;s get started
+      </h1>
       <form>
         {currentStep === 0 && (
           <>
-            <label htmlFor="fullName">Full Name</label>
+            <label htmlFor="fullName" className="dark:text-white">
+              Full Name
+            </label>
             <div className="mt-2">
               <input
                 type="text"
                 id="fullName"
                 {...register("fullName")}
                 autoComplete="fullName"
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.fullName?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -51,7 +48,7 @@ const FormControl = () => {
                 </p>
               )}
             </div>
-            <label htmlFor="email" className="mt-2 block">
+            <label htmlFor="email" className="mt-2 block dark:text-white">
               Email Address
             </label>
             <div className="mt-2">
@@ -60,7 +57,7 @@ const FormControl = () => {
                 id="email"
                 {...register("email")}
                 autoComplete="email"
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.email?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -68,7 +65,7 @@ const FormControl = () => {
                 </p>
               )}
             </div>
-            <label htmlFor="phoneNumber" className="mt-2 block">
+            <label htmlFor="phoneNumber" className="mt-2 block dark:text-white">
               Phone Number
             </label>
             <div className="mt-2">
@@ -77,7 +74,7 @@ const FormControl = () => {
                 id="phoneNumber"
                 {...register("phoneNumber")}
                 autoComplete="phoneNumber"
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.phoneNumber?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -89,14 +86,16 @@ const FormControl = () => {
         )}
         {currentStep === 1 && (
           <>
-            <label htmlFor="streetAddress">Street Address</label>
+            <label htmlFor="streetAddress" className="dark:text-white">
+              Street Address
+            </label>
             <div className="mt-2">
               <input
                 type="text"
                 id="streetAddress"
                 {...register("streetAddress")}
                 autoComplete="streetAddress"
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.streetAddress?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -104,7 +103,7 @@ const FormControl = () => {
                 </p>
               )}
             </div>
-            <label htmlFor="city" className="mt-2 block">
+            <label htmlFor="city" className="mt-2 block dark:text-white">
               City
             </label>
             <div className="mt-2">
@@ -113,7 +112,7 @@ const FormControl = () => {
                 id="city"
                 {...register("city")}
                 autoComplete="city"
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.city?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -121,7 +120,7 @@ const FormControl = () => {
                 </p>
               )}
             </div>
-            <label htmlFor="zipCode" className="mt-2 block">
+            <label htmlFor="zipCode" className="mt-2 block dark:text-white">
               Zip Code
             </label>
             <div className="mt-2">
@@ -130,7 +129,7 @@ const FormControl = () => {
                 id="zipCode"
                 {...register("zipCode")}
                 autoComplete="phoneNumber"
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.zipCode?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -142,14 +141,16 @@ const FormControl = () => {
         )}
         {currentStep >= 2 && (
           <>
-            <label htmlFor="userName">User Name</label>
+            <label htmlFor="userName" className="dark:text-white">
+              User Name
+            </label>
             <div className="mt-2">
               <input
                 type="text"
                 id="userName"
                 {...register("userName")}
                 autoComplete="userName"
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.userName?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -157,7 +158,7 @@ const FormControl = () => {
                 </p>
               )}
             </div>
-            <label htmlFor="passWord" className="mt-2 block">
+            <label htmlFor="passWord" className="mt-2 block dark:text-white">
               Password
             </label>
             <div className="mt-2">
@@ -165,7 +166,7 @@ const FormControl = () => {
                 type="password"
                 id="passWord"
                 {...register("passWord")}
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.passWord?.message && (
                 <p className="text-xs text-red-600 mt-2">
@@ -173,7 +174,10 @@ const FormControl = () => {
                 </p>
               )}
             </div>
-            <label htmlFor="confirmPassWord" className="mt-2 block">
+            <label
+              htmlFor="confirmPassWord"
+              className="mt-2 block dark:text-white"
+            >
               Confirm Password
             </label>
             <div className="mt-2">
@@ -181,7 +185,7 @@ const FormControl = () => {
                 type="password"
                 id="confirmPassWord"
                 {...register("confirmPassWord")}
-                className="border border-gray-300 outline-none rounded block w-full p-2"
+                className="border border-gray-300 outline-none rounded block w-full p-2 dark:text-white"
               />
               {errors.confirmPassWord?.message && (
                 <p className="text-xs text-red-600 mt-2">

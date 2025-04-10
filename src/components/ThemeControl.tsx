@@ -5,19 +5,28 @@ import { FaMoon } from "react-icons/fa";
 import { IoIosSunny } from "react-icons/io";
 
 const ThemeControl = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme ? JSON.parse(savedTheme) : false;
-  });
+  const [darkMode, setDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        setDarkMode(JSON.parse(savedTheme));
+      }
+      setMounted(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", JSON.stringify(darkMode));
-  }, [darkMode]);
+  }, [darkMode, mounted]);
 
   const handleChange = () => {
     setDarkMode((prev) => !prev);

@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧾 Multi-Step Form with Validation – Next.js App Router
 
-## Getting Started
+A modern, responsive multi-step form built using the latest Next.js App Router. It features real-time validation with Zod, smooth navigation between steps, and a summary screen before submission. This project focuses on clean code architecture, user experience, and accessibility.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Next.js (App Router)**
+- **React Hook Form** – Form state management
+- **Zod** – Schema-based validation
+- **TailwindCSS** – Utility-first styling
+- **React (useState/useReducer)** – Local state handling
+
+> **Bonus Features:**
+>
+> - Mobile responsive UI
+> - Dark mode support using TailwindCSS
+
+---
+
+## 🧩 Form Steps
+
+### ✅ Step 1: Personal Information
+
+- Full Name (required)
+- Email (required, must be valid)
+- Phone Number (required, min 10 digits)
+
+### 🏠 Step 2: Address Details
+
+- Street Address (required)
+- City (required)
+- Zip Code (required, numbers only, min 5 digits)
+
+### 🔐 Step 3: Account Setup
+
+- Username (required, min 4 characters)
+- Password (required, min 6 characters)
+- Confirm Password (must match password)
+
+---
+
+## 🧠 Features Implemented
+
+- ✔ Zod validation for each step
+- ✔ Real-time error messages below each field
+- ✔ Smooth navigation using "Next" and "Previous"
+- ✔ Final review screen before submission
+- ✔ All data stored in local state
+- ✔ Form submission logs data to console
+
+---
+
+## 📦 Installation & Setup
 
 ```bash
+# Clone the repo
+git clone https://github.com/your-username/multi-step-form-nextjs.git
+cd multi-step-form-nextjs
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
